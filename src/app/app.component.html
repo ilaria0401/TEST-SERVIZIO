@@ -1,1 +1,32 @@
-<h1>TEST SERVICE</h1>
+<h1 class="bg-light text-dark text-center"><strong>TEST SERVICE</strong></h1>
+
+<h3>LISTA SERVER</h3>
+<button class="btn btn-primary" (click)="apriModalInserimento()"> AGGIUNGI</button>
+
+<ng-template #modalInserimento>
+  <div class="modal-header">
+    <h1>AGGIUNGI</h1>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="FormSearch">
+      <input class="mt-3 me-3" type="text" placeholder="FATTURE IPA ID" formControlName="fattureIpaId">
+      <input class="mt-3 me-3" type="text" placeholder="CODICE" formControlName="codice">
+      <input class="mt-3 me-3" type="text" placeholder="DENOMINAZIONE" formControlName="denominazione">
+    </form>
+  </div>
+</ng-template>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>CODICE</th>
+    <th>DESCRIZIONE</th>
+    
+  </tr>
+  <tr *ngFor="let el of arreyListaServer">
+    <td>{{el.fattureIpaId}}</td>
+    <td>{{el.codice}}</td>
+    <td>{{el.denominazione}}</td>
+  </tr>
+  
+</table>
